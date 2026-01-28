@@ -1,0 +1,10 @@
+/Users/amitabhthakur/.pyenv/versions/3.10.10/lib/python3.10/site-packages/google/api_core/_python_version_support.py:275: FutureWarning: You are using a Python version (3.10.10) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+  warnings.warn(message, FutureWarning)
+Traceback (most recent call last):
+  File "/Users/amitabhthakur/Workspace/Projects/ML/AD/test_pipeline.py", line 17, in <module>
+    import run_full_pipeline as pipeline
+  File "/Users/amitabhthakur/Workspace/Projects/ML/AD/run_full_pipeline.py", line 22, in <module>
+    from dataset_utils import (
+  File "/Users/amitabhthakur/Workspace/Projects/ML/AD/src/dataset_utils.py", line 13, in <module>
+    import matplotlib.pyplot as plt
+ModuleNotFoundError: No module named 'matplotlib'

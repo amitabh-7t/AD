@@ -1,0 +1,81 @@
+/Users/amitabhthakur/.pyenv/versions/3.10.10/lib/python3.10/site-packages/google/api_core/_python_version_support.py:275: FutureWarning: You are using a Python version (3.10.10) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+  warnings.warn(message, FutureWarning)
+2026-01-28 22:41:23,042 - INFO - Starting MRI Alzheimer's Classification Pipeline...
+2026-01-28 22:41:23,042 - INFO - Seed: 42
+2026-01-28 22:41:23,042 - INFO - Batch Size: 32
+2026-01-28 22:41:23,042 - INFO - Image Size: (224, 224)
+2026-01-28 22:41:23,042 - INFO - Epochs: 50
+2026-01-28 22:41:23,042 - INFO - Models: baseline_cnn, resnet50, efficientnetb0, densenet121
+
+2026-01-28 22:41:23,042 - INFO - 
+====================================================================================================
+2026-01-28 22:41:23,042 - INFO -                               MRI ALZHEIMER'S CLASSIFICATION PIPELINE
+2026-01-28 22:41:23,042 - INFO - ====================================================================================================
+
+2026-01-28 22:41:23,043 - INFO - Environment information:
+2026-01-28 22:41:23,043 - INFO -   Python: 3.10.10
+2026-01-28 22:41:23,043 - INFO -   TensorFlow: 2.16.2
+2026-01-28 22:41:23,043 - INFO -   GPU Available: True
+2026-01-28 22:41:23,043 - INFO -   Seed: 42
+2026-01-28 22:41:23,043 - INFO - 
+====================================================================================================
+2026-01-28 22:41:23,043 - INFO - COMPONENT 1: DATASET INGESTION AND SUMMARY
+2026-01-28 22:41:23,043 - INFO - ====================================================================================================
+2026-01-28 22:41:23,043 - INFO - Loading dataset from data
+2026-01-28 22:41:23,046 - INFO - Processing class '1 Very Mild': 2240 images
+2026-01-28 22:41:31,019 - INFO - Processing class '2 Mild': 896 images
+2026-01-28 22:41:34,558 - INFO - Processing class '3 Moderate': 503 images
+2026-01-28 22:41:36,647 - INFO - Processing class 'Normal': 8104 images
+2026-01-28 22:42:12,541 - INFO - Dataset manifest saved to outputs/dataset_manifest.csv
+2026-01-28 22:42:12,541 - INFO - Valid images: 11743, Invalid/Corrupted: 0
+2026-01-28 22:42:13,557 - INFO - Class distribution plot saved to outputs/class_distribution.png
+2026-01-28 22:42:13,558 - INFO - ✓ Component 1 complete
+
+2026-01-28 22:42:13,558 - INFO - 
+====================================================================================================
+2026-01-28 22:42:13,558 - INFO - COMPONENT 2: EXPLORATORY DATA ANALYSIS
+2026-01-28 22:42:13,558 - INFO - ====================================================================================================
+2026-01-28 22:42:13,558 - INFO - Starting comprehensive EDA...
+2026-01-28 22:42:13,978 - INFO - Sample grid for '1 Very Mild' saved to outputs/eda/sample_grid_1_Very_Mild.png
+2026-01-28 22:42:14,380 - INFO - Sample grid for '2 Mild' saved to outputs/eda/sample_grid_2_Mild.png
+2026-01-28 22:42:14,731 - INFO - Sample grid for '3 Moderate' saved to outputs/eda/sample_grid_3_Moderate.png
+2026-01-28 22:42:15,259 - INFO - Sample grid for 'Normal' saved to outputs/eda/sample_grid_Normal.png
+2026-01-28 22:42:20,597 - INFO - Intensity histograms saved to outputs/eda/intensity_histograms.png
+2026-01-28 22:42:22,434 - INFO - Global pixel statistics - Mean: 91.35, Std: 75.30
+2026-01-28 22:42:22,438 - INFO - Found 4 unique image sizes
+2026-01-28 22:42:22,438 - INFO - Most common size: 256x256 (11739 images)
+2026-01-28 22:42:22,439 - INFO - Size analysis saved to outputs/eda/size_analysis.csv
+2026-01-28 22:42:22,439 - WARNING - Found 3 outlier sizes (appearing in < 1% of images)
+2026-01-28 22:42:22,443 - INFO - Computing perceptual hashes for duplicate detection...
+2026-01-28 22:42:36,432 - WARNING - Found 1266 groups of duplicate/near-duplicate images
+2026-01-28 22:42:36,439 - INFO - Duplicates report saved to outputs/eda/duplicates_report.csv
+2026-01-28 22:42:36,441 - INFO - EDA report saved to outputs/eda/eda_report.md
+2026-01-28 22:42:36,441 - INFO - EDA complete!
+2026-01-28 22:42:36,441 - INFO - ✓ Component 2 complete
+
+2026-01-28 22:42:36,441 - INFO - 
+====================================================================================================
+2026-01-28 22:42:36,441 - INFO - COMPONENT 3: PREPROCESSING AND DATASET SPLITS
+2026-01-28 22:42:36,441 - INFO - ====================================================================================================
+2026-01-28 22:42:36,441 - INFO - Creating stratified splits: 70% train, 15% val, 15% test
+2026-01-28 22:42:36,464 - INFO - Split sizes - Train: 8220, Val: 1761, Test: 1762
+2026-01-28 22:42:36.470816: I metal_plugin/src/device/metal_device.cc:1154] Metal device set to: Apple M3
+2026-01-28 22:42:36.471086: I metal_plugin/src/device/metal_device.cc:296] systemMemory: 16.00 GB
+2026-01-28 22:42:36.471097: I metal_plugin/src/device/metal_device.cc:313] maxCacheSize: 5.92 GB
+2026-01-28 22:42:36.471295: I tensorflow/core/common_runtime/pluggable_device/pluggable_device_factory.cc:305] Could not identify NUMA node of platform GPU ID 0, defaulting to 0. Your kernel may not have been built with NUMA support.
+2026-01-28 22:42:36.471312: I tensorflow/core/common_runtime/pluggable_device/pluggable_device_factory.cc:271] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 0 MB memory) -> physical PluggableDevice (device: 0, name: METAL, pci bus id: <undefined>)
+2026-01-28 22:42:36,818 - INFO - ✓ Component 3 complete
+
+2026-01-28 22:42:36,818 - INFO - 
+====================================================================================================
+2026-01-28 22:42:36,818 - INFO - COMPONENT 4: FEATURE VISUALIZATION
+2026-01-28 22:42:36,818 - INFO - ====================================================================================================
+2026-01-28 22:42:36,818 - INFO - Starting feature visualization pipeline...
+2026-01-28 22:42:36,818 - INFO - Extracting features from up to 4000 images using ResNet50...
+2026-01-28 22:42:36,819 - INFO - Sampled 4000 images from 11743 total
+2026-01-28 22:42:38.113618: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:117] Plugin optimizer for device_type GPU is enabled.
+2026-01-28 22:43:10,319 - INFO - Processed 5000/4000 images
+2026-01-28 22:43:44,313 - INFO - Processed 3500/4000 images
+2026-01-28 22:43:48,788 - INFO - Processed 7500/4000 images
+2026-01-28 22:43:52,409 - INFO - Processed 6500/4000 images
+2026-01-28 22:44:33,460 - INFO - Processed 500/4000 images
