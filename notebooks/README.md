@@ -129,6 +129,20 @@ Transfer learning with ResNet50 (ImageNet weights), fine-tuning last 20 layers.
 
 ---
 
+#### 06b. Train ResNet50 Attention
+**File**: `06b_train_resnet50_attention.ipynb`
+**Runtime**: ~2-3 hours
+
+ResNet50 with added Spatial Attention modules to focus on salient features.
+
+**Outputs**:
+- `outputs/models/resnet50_attention_best.h5`
+- `outputs/training_history/resnet50_attention_*.{json,csv,png}`
+
+**What to check**: Attention maps should highlight relevant brain regions
+
+---
+
 #### 07. Train EfficientNetB0
 **File**: `07_train_efficientnetb0.ipynb`  
 **Runtime**: ~1-2 hours
@@ -143,19 +157,7 @@ Transfer learning with EfficientNetB0, known for efficiency and accuracy balance
 
 ---
 
-#### 08. Train DenseNet121
-**File**: `08_train_densenet121.ipynb`  
-**Runtime**: ~1.5-2.5 hours
 
-Transfer learning with DenseNet121, known for dense connectivity patterns.
-
-**Outputs**: Same structure as Baseline CNN
-- `outputs/models/densenet121_best.h5`
-- `outputs/training_history/densenet121_*.{json,csv,png}`
-
-**What to check**: Compare final val_accuracy across all 4 models
-
----
 
 ### Phase 3: Analysis & Reporting (09-13) - ~45-75 minutes
 
